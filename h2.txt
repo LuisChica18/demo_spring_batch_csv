@@ -1,0 +1,2 @@
+Para conectar a la BDD h2 embebida en Spring boot, es necesario colocar la URL
+http://localhost:8080/h2-console
