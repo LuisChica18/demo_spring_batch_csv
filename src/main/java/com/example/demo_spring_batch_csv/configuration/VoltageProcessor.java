@@ -12,9 +12,12 @@ public class VoltageProcessor implements ItemProcessor<Voltage, Voltage> {
         final BigDecimal volt = voltage.getVolt();
         final double time = voltage.getTime();
 
-        final Voltage processedVoltage = new Voltage();
-        processedVoltage.setVolt(volt);
-        processedVoltage.setTime(time);
-        return processedVoltage;
+        if (volt.compareTo(BigDecimal.valueOf(5)) > 0) {
+            final Voltage processedVoltage = new Voltage();
+            processedVoltage.setVolt(volt);
+            processedVoltage.setTime(time);
+            return processedVoltage;
+        }
+        return null;
     }
 }
